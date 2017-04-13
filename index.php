@@ -13,7 +13,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Mark Allen | Front-end Developer and Graphic Designer</title>
+        <title>Mark Allen | Web and Graphic Designer</title>
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
         <link rel="stylesheet" href="main.css">
@@ -22,7 +22,7 @@
         <header>
             <div class="name-title">
                 <h1>Mark Allen</h1>
-                <h3>Front-end developer</h3>
+                <h3>Web Designer</h3>
             </div>
         </header>
         <article class="cross-background"></article>
@@ -31,7 +31,7 @@
                 <article class="profile-picture"></article>
                 <div class="block-container">
                     <h2>My Story</h2>
-                    <p>I'm Mark, I'm a freelance Front-end developer and Graphic Designer. Welcome to my personal portfolio. I have a range of development and creative skills and can apply them to a variety of projects, which allow me to create high quality, designs and responsive websites.</p>
+                    <p>I'm Mark, I'm a freelance Web and Graphic Designer. Welcome to my personal portfolio. I have a range of development and creative skills and can apply them to a variety of projects, which allow me to create high quality, designs and responsive websites.</p>
                 </div>
                 <div class="block-container">
                     <h2>Follow me</h2> <a href="https://www.instagram.com/dugtrio91/" title="Instagram"><i class="fa fa-instagram fa-3x"></i></a>
@@ -159,7 +159,7 @@
 
                 if($errorCount === 0){
 
-                    $to = "contact@markallendesign.co.uk";
+                    $to = "markallendesign@icloud.com";
                     $subject = "You have a message from a customer";
                     $htmlContent = "
                         <h1>Contact request details</h1>
