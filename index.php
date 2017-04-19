@@ -16,16 +16,34 @@
         <title>Mark Allen | Web and Graphic Designer</title>
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="main.css">
-    </head>
+        <link rel="stylesheet" href="main.css"> </head>
+
     <body>
         <header>
             <div class="name-title">
                 <h1>Mark Allen</h1>
-                <h3>Web Designer</h3>
-            </div>
+                <h3>Web Designer</h3> </div>
+            <div id="cross-background" data-type="background" data-speed="2"></div>
         </header>
-        <article class="cross-background"></article>
+        <script>
+
+        function parallax() {
+	       var crossBackground = document.getElementById("cross-background");
+
+	       var yPos = window.pageYOffset / crossBackground.dataset.speed;
+	       yPos = -yPos;
+	
+	       var coordinates = '0% '+ yPos + 'px';
+	
+	       crossBackground.style.backgroundPosition = coordinates;
+        }
+
+            window.addEventListener("scroll", function(){
+	           parallax();	
+            });
+
+
+        </script>
         <section>
             <div class="section-inner">
                 <article class="profile-picture"></article>
@@ -34,46 +52,37 @@
                     <p>I'm Mark, I'm a freelance Web and Graphic Designer. Welcome to my personal portfolio. I have a range of development and creative skills and can apply them to a variety of projects, which allow me to create high quality, designs and responsive websites.</p>
                 </div>
                 <div class="block-container">
-                    <h2>Follow me</h2> <a href="https://www.instagram.com/dugtrio91/" title="Instagram"><i class="fa fa-instagram fa-3x"></i></a>
-                    <a href="https://uk.pinterest.com/markdallen/" title="Pinterest"><i class="fa fa-pinterest fa-3x"></i></a>
-                    <a href="https://github.com/DugTrio91" title="GitHub"><i class="fa fa-github fa-3x"></i></a> <a href="https://twitter.com/DugTrio91" title="Twitter"><i class="fa fa-twitter fa-3x"></i></a>
-                    <a href="https://www.linkedin.com/in/mark-allen-188950b3/" title="LinkedIn"><i class="fa fa-linkedin fa-3x"></i></a> 
-                </div>
+                    <h2>Follow me</h2> <a href="https://www.instagram.com/dugtrio91/" title="Instagram"><i class="fa fa-instagram fa-3x"></i></a> <a href="https://uk.pinterest.com/markdallen/" title="Pinterest"><i class="fa fa-pinterest fa-3x"></i></a> <a href="https://github.com/DugTrio91" title="GitHub"><i class="fa fa-github fa-3x"></i></a> <a href="https://twitter.com/DugTrio91" title="Twitter"><i class="fa fa-twitter fa-3x"></i></a> <a href="https://www.linkedin.com/in/mark-allen-188950b3/" title="LinkedIn"><i class="fa fa-linkedin fa-3x"></i></a> </div>
             </div>
         </section>
         <article class="skills-section">
-            <div class="skills-box">
-                <i class="skill-icon fa fa-code"></i>
+            <div class="skills-box"> <i class="skill-icon fa fa-code"></i>
                 <h3>Programming<br>languages</h3>
                 <p>HTML5</p>
                 <p>CSS3. SASS</p>
                 <p>JavaScript</p>
                 <p>PHP</p>
             </div>
-            <div class="skills-box">
-                <i class="skill-icon fa fa-desktop"></i>
+            <div class="skills-box"> <i class="skill-icon fa fa-desktop"></i>
                 <h3>Graphic<br>design</h3>
                 <p>Photoshop</p>
                 <p>Illustrator</p>
                 <p>InDesign</p>
             </div>
-            <div class="skills-box">
-                <i class="skill-icon fa fa-file-code-o"></i>
+            <div class="skills-box"> <i class="skill-icon fa fa-file-code-o"></i>
                 <h3>Frameworks &amp; <br>Tools</h3>
                 <p>jQuery</p>
                 <p>Git</p>
                 <p>Bootstrap</p>
             </div>
-            <div class="skills-box">
-                <i class="skill-icon fa fa-cubes"></i>
+            <div class="skills-box"> <i class="skill-icon fa fa-cubes"></i>
                 <h3>Transferable <br>
                 skills</h3>
                 <p>Time management</p>
                 <p>Team work</p>
                 <p>Communication</p>
                 <p>Motivation</p>
-                
-            </div>  
+            </div>
         </article>
         <section class="work-slideshow">
             <div class="section-inner slideshow-container">
@@ -97,10 +106,8 @@
             echo '</div>';
             
             }
-        ?> 
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            <div class="dashes">
+        ?> <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <div class="dashes">
                         <?php
 
             $sql = "SELECT * FROM portfolio ORDER BY id ASC";
@@ -112,7 +119,6 @@
             }
         ?> </div>
         </section>
-        
         <section>
             <div class="section-inner">
                 <div class="contact-form">
@@ -197,23 +203,24 @@
                                 <input type="email" name="email" value="" placeholder="&#xf003; Email*" />
                                 <div class="error">
                                     <?php echo $emailErr;?>
-                            </div>
-                            <textarea type="text" name="message" placeholder="&#xf040;  Message*"></textarea>
-                            <div class="error">
+                                </div>
+                                <textarea type="text" name="message" placeholder="&#xf040;  Message*"></textarea>
+                                <div class="error">
                                     <?php echo $messageErr;?>
-                            </div>
-                            <br>
-                            <div id="contact-captcha" class="g-recaptcha" data-sitekey="6LcdTCITAAAAAJovQXUZ6K22K0qvhDU8vdGC9uOn"></div>
-                            <div class="error">
-                                <?php echo $captchaErr;?>
-                            </div>
-                            <input class="button" type="submit" id="submit" type="button" name="submit" value="Send"> </form>
-                    </div>
+                                </div>
+                                <br>
+                                <div id="contact-captcha" class="g-recaptcha" data-sitekey="6LcdTCITAAAAAJovQXUZ6K22K0qvhDU8vdGC9uOn"></div>
+                                <div class="error">
+                                    <?php echo $captchaErr;?>
+                                </div>
+                                <input class="button" type="submit" id="submit" type="button" name="submit" value="Send"> </form>
+                        </div>
                 </div>
             </div>
         </section>
         <footer>
-            <p>Designed &amp; Created by Mark Allen <br> ©2017 Mark Allen. All rights reserved.</p>
+            <p>Designed &amp; Created by Mark Allen
+                <br> ©2017 Mark Allen. All rights reserved.</p>
         </footer>
     </body>
     <script>
